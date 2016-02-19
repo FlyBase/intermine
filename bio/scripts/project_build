@@ -861,14 +861,13 @@ sub get_restart_suffix_server
 log_and_print "reading properties from: $properties_file\n";
 
 my %properties = read_properties($properties_file);
-my ($prod_host, $prod_db, $prod_user, $prod_pass) = @properties{qw/
+my ($prod_host, $prod_port, $prod_db, $prod_user, $prod_pass) = @properties{qw/
         db.production.datasource.serverName
+        db.production.datasource.port
         db.production.datasource.databaseName
         db.production.datasource.user
         db.production.datasource.password
 /};
-
-my $prod_port;
 
 if ($prod_host =~ /(.+):(\d+)/) {
   $prod_host = $1;
