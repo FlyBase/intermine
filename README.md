@@ -6,5 +6,11 @@ Dockerized FlyBase implementation of the [InterMine](http://intermine.org) softw
 Getting Started With FlyBaseMine
 -------------------------------
 
+1. Initial run
+```
+
+
+```
+
 TODO
 -------------
