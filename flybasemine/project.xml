@@ -13,6 +13,16 @@
             <property name="src.data.dir" location="/home/jogoodma/development/intermine/data/go-annotation"/>
             <property name="ontologyPrefix" value="GO"/>
         </source>
+
+        <!--
+        <source name="chado-FBgn" type="intermine-items-large-xml-file">
+            <property name="src.data.file" location="/home/jogoodma/development/intermine/data/chado_FBgn-intermine-items.xml"/>
+        </source>
+        -->
+
+        <source name="entrez-organism" type="entrez-organism">
+            <property name="src.data.file" location="build/organisms.xml"/>
+        </source>
   </sources>
 
   <post-processing>
@@ -20,6 +30,7 @@
       <!-- this runs the postprocessing steps in all sources -->
       <post-process name="do-sources"/>
 
+      <post-process name="create-attribute-indexes"/>
       <post-process name="summarise-objectstore"/>
       <post-process name="create-autocomplete-index"/>
       <post-process name="create-search-index"/>

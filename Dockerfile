@@ -29,25 +29,31 @@ RUN apt-get update && apt-get install -y \
         libnumber-format-perl \
         libperlio-gzip-perl \
         libperl6-junction-perl \
-        postgresql-client
+        postgresql-client \
+        less \
+        vim
 
 RUN mkdir -p /intermine && \
     chown -R intermine:intermine /intermine
 
 USER intermine
 
+RUN mkdir -p /home/intermine/.intermine
+
 COPY bio /intermine/bio/
 COPY config /intermine/config/
 COPY imbuild /intermine/imbuild/
 COPY intermine /intermine/intermine/
 COPY flybasemine /intermine/flybasemine/
+RUN rm -f /intermine/flybasemine/flybasemine.properties
 COPY LICENSE /intermine/
 COPY LICENSE.LIBS /intermine/
 COPY README.md /intermine/
 COPY RELEASE_NOTES /intermine/
+COPY flybasemine/flybasemine.properties /home/intermine/.intermine/
 
 ENV ANT_OPTS="-server -XX:MaxPermSize=256M -Xmx1700m -XX:+UseParallelGC -Xms1700m -XX:SoftRefLRUPolicyMSPerMB=1 -XX:MaxHeapFreeRatio=99"
 ENV JAVA_OPTS="$JAVA_OPTS -Dorg.apache.el.parser.SKIP_IDENTIFIER_CHECK=true"
 
-VOLUME /intermine
+VOLUME /intermine /home/intermine
 WORKDIR /intermine
