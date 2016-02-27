@@ -39,7 +39,7 @@ Pull and run the FlyBase InterMine build image.
 docker run -it -v /localhost/path/to/flybasemine_data:/data --name intermine-build --link intermine-db:db --link intermine-tomcat:tomcat flybase/intermine bash
 ```
 
-The ```-v``` flag maps the host machine directory ```/localhost/path/to/flybasemine_data``` to the ```/data```` directory in the container.
+The ```-v``` flag maps the host machine directory ```/localhost/path/to/flybasemine_data``` to the ```/data``` directory in the container.
 If you omit the ```-v``` flag it will create an empty data directory on your container that you will have to populate with data files.  See
 the /intermine/flybasemine/project.xml file for their expected names and locations.
 
