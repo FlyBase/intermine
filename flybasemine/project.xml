@@ -6,17 +6,17 @@
     <property name="default.intermine.properties.file" location="../default.intermine.integrate.properties"/>
     <sources>
         <source name="go" type="go">
-            <property name="src.data.file" location="/home/jogoodma/development/intermine/data/go/go-basic.obo"/>
+            <property name="src.data.file" location="/data/go/go-basic.obo"/>
         </source>
 
         <source name="go-annotation" type="go-annotation">
-            <property name="src.data.dir" location="/home/jogoodma/development/intermine/data/go-annotation"/>
+            <property name="src.data.dir" location="/data/go-annotation"/>
             <property name="ontologyPrefix" value="GO"/>
         </source>
 
         <!--
         <source name="chado-FBgn" type="intermine-items-large-xml-file">
-            <property name="src.data.file" location="/home/jogoodma/development/intermine/data/chado_FBgn-intermine-items.xml"/>
+            <property name="src.data.file" location="/data/chado_FBgn-intermine-items.xml"/>
         </source>
         -->
 

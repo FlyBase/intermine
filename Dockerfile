@@ -32,6 +32,7 @@ RUN apt-get update && apt-get install -y \
         default-jdk \
         perl \
         ant \
+        git \
         liblist-moreutils-perl \
         libwww-perl \
         libmodule-find-perl \
