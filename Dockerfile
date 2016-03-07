@@ -55,7 +55,7 @@ RUN apt-get update && apt-get install -y \
         less \
         vim
 
-RUN mkdir -p /intermine /home/intermine/.intermine
+RUN mkdir -p /intermine /home/intermine/.intermine /data
 
 COPY bio /intermine/bio/
 COPY config /intermine/config/
@@ -76,5 +76,5 @@ ENV ANT_OPTS="-server -XX:MaxPermSize=256M -Xmx1700m -XX:+UseParallelGC -Xms1700
 ENV JAVA_OPTS="$JAVA_OPTS -Dorg.apache.el.parser.SKIP_IDENTIFIER_CHECK=true"
 
 
-VOLUME /intermine /home/intermine
+VOLUME /intermine /home/intermine /data
 WORKDIR /intermine
